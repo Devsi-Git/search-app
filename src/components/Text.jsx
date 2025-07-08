@@ -34,7 +34,7 @@ function Text({ text, words }) {
   };
 
   return (
-    <div className="w-200 text-center leading-7">
+    <div className="w-200 max-sm:w-120 max-md:w-150 max-lg:w-170 max-lg:text-sm text-center leading-7">
       {highlightWords(text, words)}
     </div>
   );

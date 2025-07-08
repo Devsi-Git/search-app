@@ -11,7 +11,6 @@ function App() {
 
   function handleSearch() {
     if (searchValue === "") return [];
-
     const regex = new RegExp(
       `([\\u0600-\\u06FF]*${searchValue}[\\u0600-\\u06FF]*)`,
       "gi"
@@ -19,9 +18,9 @@ function App() {
     const matches = text.match(regex);
     return matches || [];
   }
+
   function handleHighlight() {
     if (word === "") return [];
-
     const regex = new RegExp(
       `([\\u0600-\\u06FF]*${word}[\\u0600-\\u06FF]*)`,
       "gi"
@@ -31,7 +30,7 @@ function App() {
   }
 
   return (
-    <main className="flex flex-col justify-between items-center mt-8 w-full h-140 font-vazir">
+    <main className="flex flex-col justify-between items-center mx-auto mt-8 w-fitt h-140 font-vazir">
       <div className="space-y-2">
         <Input
           searchValue={searchValue}
