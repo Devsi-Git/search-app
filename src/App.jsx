@@ -16,7 +16,8 @@ function App() {
       "gi"
     );
     const matches = text.match(regex);
-    return matches || [];
+    const uniqueMatch = [...new Set(matches)];
+    return uniqueMatch || [];
   }
 
   function handleHighlight() {

@@ -22,14 +22,15 @@ function Opener({ handleSearch, setsearchValue, setWord, searchValue }) {
   return searchValue.length > 1 ? (
     <div className="flex items-center gap-2">
       <div>
-        <ul className="flex flex-col self-center gap-1 rounded-3xl w-80 max-h-65 overflow-y-scroll [scrollbar-width:none]">
+        <ul className="flex flex-col self-center gap-1 rounded-3xl w-90 max-[31.5rem]:w-65 max-md:w-80 max-h-65 overflow-y-scroll [scrollbar-width:none]">
           {results.map((result, index) => (
             <li
               key={index}
               className={` ${
                 index === selectedIndex ? "bg-cyan-100" : ""
-              } bg-cyan-50 px-3 py-2 cursor-pointer`}
+              } bg-cyan-50 px-3 py-2 max-lg:text-sm  cursor-pointer`}
               onClick={(e) => {
+                setSelectedIndex(0);
                 setsearchValue("");
                 setWord(e.target.textContent);
               }}
@@ -43,13 +44,13 @@ function Opener({ handleSearch, setsearchValue, setWord, searchValue }) {
       {results.length > 0 ? (
         <div className="flex flex-col gap-1">
           <button
-            className="bg-cyan-100 p-3 rounded-xl hover:scale-90 transition-all"
+            className="bg-cyan-100 p-3 max-lg:p-2 rounded-xl hover:scale-90 transition-all"
             onClick={moveUp}
           >
             <FaArrowUp />
           </button>
           <button
-            className="bg-cyan-100 p-3 rounded-xl hover:scale-90 transition-all"
+            className="bg-cyan-100 p-3 max-lg:p-2 rounded-xl hover:scale-90 transition-all"
             onClick={moveDown}
           >
             <FaArrowDown />
