@@ -8,12 +8,14 @@ function Opener({ handleSearch, setsearchValue, setWord, searchValue }) {
   const moveUp = () => {
     if (selectedIndex > 0) {
       setSelectedIndex(selectedIndex - 1);
+      setWord(results[selectedIndex]);
     }
   };
 
   const moveDown = () => {
     if (selectedIndex < results.length - 1) {
       setSelectedIndex(selectedIndex + 1);
+      setWord(results[selectedIndex]);
     }
   };
 
